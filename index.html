@@ -1,32 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Studio Lídia Siqueira</title>
-<link rel="stylesheet" href="style.css">
+<style>
+:root{--bg-primary:#0a1020;--accent-gold:#d4af37;--accent-pink:#ff5a8a;--text-muted:#94a3b8;--border-color:rgba(255,255,255,0.1);}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg-primary);color:white;font-family:Inter,system-ui,sans-serif;display:flex;justify-content:center;padding:20px;}
+.container{max-width:480px;width:100%;background:rgba(255,255,255,0.03);border:1px solid var(--border-color);border-radius:20px;padding:25px;box-shadow:0 10px 40px rgba(0,0,0,0.4);}
+.topo-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.btn-admin-login{background:#1e293b;color:white;border:none;padding:8px 14px;border-radius:20px;cursor:pointer;font-size:12px;}
+.logo-container{display:flex;justify-content:center;margin:20px 0;}
+.logo{width:180px;height:180px;object-fit:contain;border-radius:50%;box-shadow:0 5px 15px rgba(212,175,55,0.3);border:3px solid #d4af37;background:white;}
+.btn-whatsapp{display:inline-block;background:linear-gradient(135deg,#25d366,#128c7e);color:white;text-decoration:none;padding:14px;border-radius:12px;box-shadow:0 5px 15px rgba(37,211,102,0.3);text-align:center;width:100%;margin-bottom:20px;font-weight:700;}
+.form-group{margin-bottom:15px;}label{display:block;font-size:13px;color:var(--text-muted);margin-bottom:5px;}
+input,select{width:100%;padding:14px;border-radius:12px;border:1px solid var(--border-color);background:rgba(255,255,255,0.05);color:white;font-size:15px;}
+.linha-data-hora{display:flex;gap:15px;}
+.btn-principal{background:linear-gradient(135deg,var(--accent-gold),#b38f27);color:var(--bg-primary);border:none;cursor:pointer;font-weight:700;font-size:16px;padding:16px;width:100%;border-radius:12px;margin-top:10px;box-shadow:0 5px 20px rgba(212,175,55,0.3);}
+ul{list-style:none;}li{background:rgba(255,255,255,0.03);margin:10px 0;padding:15px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;border-left:4px solid var(--accent-pink);}
+.btn-excluir{background:#ef4444;color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer;font-size:12px;}
+.admin-panel{display:none;}.dashboard-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:25px;}
+.card-metrica{background:rgba(212,175,55,0.05);border:1px solid var(--border-color);padding:15px;border-radius:12px;text-align:center;}
+.card-metrica h4{font-size:12px;color:var(--text-muted);margin-bottom:5px;} .card-metrica p{font-size:18px;font-weight:700;color:var(--accent-gold);}
+.admin-section{background:rgba(0,0,0,0.2);padding:20px;border-radius:15px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.05);}
+.estoque-baixo{border-left:4px solid #ef4444 !important;background:rgba(239,68,68,0.05) !important;}
+.badge-alerta{background:#ef4444;color:white;font-size:10px;padding:2px 8px;border-radius:6px;font-weight:600;}
+.btn-voltar{background:#334155;color:white;border:none;padding:10px 20px;border-radius:10px;cursor:pointer;margin-bottom:20px;}
+footer{text-align:center;margin-top:20px;color:var(--text-muted);font-size:13px;}
+</style>
 </head>
 <body>
 <div class="container">
-<img src="logo.png" class="logo">
-<h1>Studio Lídia Siqueira</h1>
-<p class="sub">Beleza que transforma sua autoestima</p>
-<a class="btn-whats" href="https://wa.me/5591981800016" target="_blank">📱 Agendar no WhatsApp</a>
-<h2>Agende seu horário</h2>
-<form id="formAgendamento">
-<input id="nome" placeholder="Seu nome completo" required>
-<input type="text" id="buscaServico" placeholder="🔍 Buscar: botox, limpeza, laser..." onkeyup="filtrarServicos()">
-<select id="servico" required>
-<option value="">-- Escolha o serviço --</option>
-<optgroup label="FACIAIS"><option>Limpeza de pele profunda - R$ 120 a R$ 250</option><option>Peeling químico - R$ 150 a R$ 350</option><option>Microagulhamento - R$ 250 a R$ 600</option><option>Revitalização - R$ 100 a R$ 200</option><option>Drenagem facial - R$ 80 a R$ 150</option><option>Design sobrancelhas - R$ 35 a R$ 70</option><option>Henna - R$ 50 a R$ 90</option><option>Micropigmentação - R$ 400 a R$ 1.200</option><option>Extensão de cílios - R$ 120 a R$ 250</option><option>Lash Lifting - R$ 90 a R$ 180</option><option>Hydra Gloss - R$ 150 a R$ 300</option><option>Radiofrequência - R$ 120 a R$ 250</option></optgroup>
-<optgroup label="CORPORAIS"><option>Drenagem corporal - R$ 80 a R$ 160</option><option>Modeladora - R$ 90 a R$ 170</option><option>Relaxante - R$ 90 a R$ 180</option><option>Pedras quentes - R$ 120 a R$ 220</option><option>Criolipólise - R$ 150 a R$ 400</option><option>Cavitação - R$ 100 a R$ 200</option><option>Carboxiterapia - R$ 100 a R$ 180</option><option>Corrente Russa - R$ 70 a R$ 130</option><option>Endermologia - R$ 80 a R$ 150</option><option>Banho de lua - R$ 90 a R$ 180</option><option>Pump Up - R$ 80 a R$ 150</option><option>Micro estrias - R$ 250 a R$ 500</option></optgroup>
-<optgroup label="DEPILAÇÃO"><option>Virilha - R$ 50 a R$ 100</option><option>Meia perna - R$ 30 a R$ 60</option><option>Axilas cera - R$ 20 a R$ 45</option><option>Laser Axilas - R$ 60 a R$ 150</option><option>Laser Perna Inteira - R$ 200 a R$ 500</option><option>Spa dos pés - R$ 50 a R$ 100</option><option>💉 Botox - R$ 1.200</option><option>💋 Bigode Chinês - R$ 1.800</option></optgroup>
-</select>
-<div class="row"><input type="date" id="data" required><input type="time" id="hora" required></div>
-<button type="submit">✨ Agendar Agora</button>
-</form>
-<ul id="listaAgendamentos"></ul>
+<div class="topo-header"><span style="font-size:12px;color:var(--accent-gold);">✨ Studio Exclusivo</span><button class="btn-admin-login" onclick="abrirAdmin()">🔒 Acesso Proprietária</button></div>
+
+<!-- AQUI ESTÁ A LOGO - JÁ CORRIGIDA -->
+<div class="logo-container">
+<img src="./logo.png" alt="Studio Lídia Siqueira" class="logo">
 </div>
-<script>function filtrarServicos(){let b=document.getElementById('buscaServico').value.toLowerCase();let o=document.getElementById('servico').options;for(let i=0;i<o.length;i++){let t=o[i].text.toLowerCase();o[i].style.display=o[i].value===""?"":t.includes(b)?"":"none"}}document.getElementById('formAgendamento').addEventListener('submit',function(e){e.preventDefault();let n=document.getElementById('nome').value,s=document.getElementById('servico').value,d=document.getElementById('data').value,h=document.getElementById('hora').value;if(!s){alert('Escolha um serviço!');return}window.open(`https://wa.me/5591981800016?text=Olá! Quero agendar ${s} em ${d} às ${h} - ${n}`,'_blank')})</script>
+
+<div id="viewCliente"><div style="text-align:center;"><a href="https://wa.me/5591981800016" target="_blank" class="btn-whatsapp">📱 Fale no WhatsApp (91) 98180-0016</a></div><h2>Agende seu Horário</h2><form id="formAgendamento"><div class="form-group"><label>Seu Nome</label><input type="text" id="nome" placeholder="Ex: Maria Silva" required></div><div class="form-group"><label>Procedimento</label><select id="servicoSelect" required></select></div><div class="linha-data-hora"><div class="form-group" style="width:100%;"><label>Data</label><input type="date" id="data" required></div><div class="form-group" style="width:100%;"><label>Hora</label><input type="time" id="hora" required></div></div><button type="submit" class="btn-principal">✨ Confirmar Agendamento</button></form><div style="margin-top:30px;border-top:1px solid var(--border-color);padding-top:20px;"><h3>Seus Agendamentos</h3><ul id="listaAgendamentosCliente"></ul></div></div>
+
+<div id="viewAdmin" class="admin-panel"><button class="btn-voltar" onclick="fecharAdmin()">← Voltar</button><h2>Painel da Lídia Siqueira</h2><div class="dashboard-cards"><div class="card-metrica"><h4>Diário</h4><p id="fatDiario">R$ 0,00</p></div><div class="card-metrica"><h4>Semanal</h4><p id="fatSemanal">R$ 0,00</p></div><div class="card-metrica"><h4>Mensal</h4><p id="fatMensal">R$ 0,00</p></div></div><div class="admin-section"><h3>Agenda & Caixa</h3><ul id="listaAdminAgendamentos"></ul></div><div class="admin-section"><h3>Serviços</h3><div class="form-group"><input type="text" id="novoServicoNome" placeholder="Nome do Procedimento"></div><div class="form-group"><input type="number" id="novoServicoPreco" placeholder="Preço R$"></div><button class="btn-principal" onclick="adicionarServico()">Adicionar</button><ul id="listaAdminServicos"></ul></div><div class="admin-section"><h3>Estoque</h3><div class="form-group"><input type="text" id="novoProdutoNome" placeholder="Nome do Insumo"></div><div class="form-group"><input type="number" id="novoProdutoQtd" placeholder="Qtd"></div><div class="form-group"><input type="number" id="novoProdutoMinimo" placeholder="Mínimo"></div><button class="btn-principal" onclick="adicionarProdutoEstoque()">Cadastrar</button><ul id="listaAdminEstoque"></ul></div></div>
+<footer><p>Studio Lídia Siqueira - Beleza que transforma</p></footer>
+</div>
+<script>
+const servicosPadrao=[{nome:"Limpeza de Pele",preco:120},{nome:"Botox",preco:350},{nome:"Depilação a Laser",preco:200},{nome:"Massagem Relaxante",preco:90}];
+const estoquePadrao=[{nome:"Ampola de Botox",qtd:2,minimo:3},{nome:"Luvas",qtd:5,minimo:2},{nome:"Sérum",qtd:1,minimo:2}];
+if(!localStorage.getItem('servicos'))localStorage.setItem('servicos',JSON.stringify(servicosPadrao));
+if(!localStorage.getItem('estoque'))localStorage.setItem('estoque',JSON.stringify(estoquePadrao));
+if(!localStorage.getItem('agendamentos'))localStorage.setItem('agendamentos',JSON.stringify([]));
+document.addEventListener('DOMContentLoaded',()=>{atualizarSelectServicos();carregarAgendamentosCliente();});
+function atualizarSelectServicos(){const s=JSON.parse(localStorage.getItem('servicos'));const sel=document.getElementById('servicoSelect');sel.innerHTML='';s.forEach(x=>{sel.innerHTML+=`<option value="${x.nome} - R$ ${x.preco}">${x.nome} - R$ ${x.preco}</option>`});}
+document.getElementById('formAgendamento').addEventListener('submit',function(e){e.preventDefault();const nome=document.getElementById('nome').value;const serv=document.getElementById('servicoSelect').value;const data=document.getElementById('data').value;const hora=document.getElementById('hora').value;const m=serv.match(/R\$\s(\d+)/);const valor=m?parseFloat(m[1]):0;let ags=JSON.parse(localStorage.getItem('agendamentos'));if(ags.find(a=>a.data===data&&a.hora===hora&&a.status!=='Cancelado')){alert('Horário ocupado');return;}ags.push({id:Date.now(),nome,servico:serv,valor,data,hora,status:'Pendente'});localStorage.setItem('agendamentos',JSON.stringify(ags));window.open(`https://wa.me/5591981800016?text=Olá Studio! Quero agendar ${serv} em ${data} às ${hora} - ${nome}`,'_blank');carregarAgendamentosCliente();this.reset();});
+function carregarAgendamentosCliente(){const lista=document.getElementById('listaAgendamentosCliente');lista.innerHTML='';let ags=JSON.parse(localStorage.getItem('agendamentos')).filter(a=>a.status==='Pendente');if(!ags.length){lista.innerHTML='<li>Nenhum pendente</li>';return;}ags.forEach(ag=>{const li=document.createElement('li');li.innerHTML=`<span><b>${ag.nome}</b><br>${ag.servico}<br>${ag.data} ${ag.hora}</span><button class=btn-excluir onclick=cancelarCliente(${ag.id})>Cancelar</button>`;lista.appendChild(li);});}
+function cancelarCliente(id){if(confirm('Cancelar?')){let a=JSON.parse(localStorage.getItem('agendamentos'));a=a.map(x=>x.id===id?{...x,status:'Cancelado'}:x);localStorage.setItem('agendamentos',JSON.stringify(a));carregarAgendamentosCliente();}}
+function abrirAdmin(){if(prompt('Senha (1234):')==='1234'){document.getElementById('viewCliente').style.display='none';document.getElementById('viewAdmin').style.display='block';carregarPainelAdmin();}}
+function fecharAdmin(){document.getElementById('viewAdmin').style.display='none';document.getElementById('viewCliente').style.display='block';}
+function carregarPainelAdmin(){carregarMetricas();carregarAdminAgendamentos();carregarAdminServicos();carregarAdminEstoque();}
+function carregarMetricas(){let ags=JSON.parse(localStorage.getItem('agendamentos'));const hoje=new Date().toISOString().split('T')[0];let d=0,s=0,m=0;const hj=new Date();ags.forEach(ag=>{if(ag.status==='Concluído'){if(ag.data===hoje)d+=ag.valor;const da=new Date(ag.data+'T00:00:00');if(da.getMonth()===hj.getMonth())m+=ag.valor;if(Math.abs(hj-da)/(1000*60*60*24)<=7)s+=ag.valor;}});document.getElementById('fatDiario').innerText=`R$ ${d.toFixed(2)}`;document.getElementById('fatSemanal').innerText=`R$ ${s.toFixed(2)}`;document.getElementById('fatMensal').innerText=`R$ ${m.toFixed(2)}`;}
+function carregarAdminAgendamentos(){const lista=document.getElementById('listaAdminAgendamentos');lista.innerHTML='';let ags=JSON.parse(localStorage.getItem('agendamentos'));ags.forEach(ag=>{const li=document.createElement('li');li.innerHTML=`<span><b>${ag.nome}</b> (${ag.status})<br>${ag.servico}<br>${ag.data} ${ag.hora}</span><div><button onclick=mudarStatus(${ag.id},'Concluído') style=background:#22c55e;border:none;color:white;padding:5px;border-radius:6px>Ok</button> <button onclick=mudarStatus(${ag.id},'Cancelado') style=background:#ef4444;border:none;color:white;padding:5px;border-radius:6px>X</button></div>`;lista.appendChild(li);});}
+function mudarStatus(id,st){let a=JSON.parse(localStorage.getItem('agendamentos'));a=a.map(x=>x.id===id?{...x,status:st}:x);localStorage.setItem('agendamentos',JSON.stringify(a));carregarPainelAdmin();}
+function carregarAdminServicos(){const l=document.getElementById('listaAdminServicos');l.innerHTML='';JSON.parse(localStorage.getItem('servicos')).forEach((s,i)=>{const li=document.createElement('li');li.innerHTML=`<span>${s.nome} - R$ ${s.preco}</span><button class=btn-excluir onclick=removerServico(${i})>X</button>`;l.appendChild(li);});}
+function adicionarServico(){const n=document.getElementById('novoServicoNome').value;const p=parseFloat(document.getElementById('novoServicoPreco').value);if(!n||isNaN(p))return;let s=JSON.parse(localStorage.getItem('servicos'));s.push({nome:n,preco:p});localStorage.setItem('servicos',JSON.stringify(s));carregarAdminServicos();atualizarSelectServicos();}
+function removerServico(i){let s=JSON.parse(localStorage.getItem('servicos'));s.splice(i,1);localStorage.setItem('servicos',JSON.stringify(s));carregarAdminServicos();atualizarSelectServicos();}
+function carregarAdminEstoque(){const l=document.getElementById('listaAdminEstoque');l.innerHTML='';JSON.parse(localStorage.getItem('estoque')).forEach((pr,i)=>{const li=document.createElement('li');if(pr.qtd<=pr.minimo)li.classList.add('estoque-baixo');li.innerHTML=`<span><b>${pr.nome}</b> Qtd:${pr.qtd}</span><div><button onclick=alterarQtdEstoque(${i},1) style=background:#334155;color:white;border:none;padding:5px;border-radius:5px>+</button> <button onclick=alterarQtdEstoque(${i},-1) style=background:#334155;color:white;border:none;padding:5px;border-radius:5px>-</button> <button class=btn-excluir onclick=removerEstoque(${i})>X</button></div>`;l.appendChild(li);});}
+function adicionarProdutoEstoque(){const n=document.getElementById('novoProdutoNome').value;const q=parseInt(document.getElementById('novoProdutoQtd').value);const mi=parseInt(document.getElementById('novoProdutoMinimo').value);if(!n||isNaN(q)||isNaN(mi))return;let e=JSON.parse(localStorage.getItem('estoque'));e.push({nome:n,qtd:q,minimo:mi});localStorage.setItem('estoque',JSON.stringify(e));carregarAdminEstoque();}
+function alterarQtdEstoque(i,d){let e=JSON.parse(localStorage.getItem('estoque'));e[i].qtd+=d;if(e[i].qtd<0)e[i].qtd=0;localStorage.setItem('estoque',JSON.stringify(e));carregarAdminEstoque();}
+function removerEstoque(i){let e=JSON.parse(localStorage.getItem('estoque'));e.splice(i,1);localStorage.setItem('estoque',JSON.stringify(e));carregarAdminEstoque();}
+</script>
 </body>
 </html>
