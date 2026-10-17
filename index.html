@@ -1,70 +1,1203 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Studio Lídia Siqueira - Oficial</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Poppins,sans-serif;background:linear-gradient(180deg,#0a1931 0%, #1e3a5f 100%);color:#fff;min-height:100vh}
-.container{max-width:1150px;margin:0 auto;padding:20px}.topo{display:flex;justify-content:space-between;align-items:center}
-.topo button{border:1px solid #d4af37;color:#d4af37;background:transparent;padding:8px 18px;border-radius:20px;cursor:pointer}
-/* CORREÇÃO 100% CENTRALIZADA */
-.logo-box{width:100% !important;max-width:100% !important;display:flex !important;flex-direction:column;align-items:center !important;justify-content:center !important;text-align:center;margin:0 auto !important;padding:30px 0;position:relative}
-.logo-box img{width:340px;height:340px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 5px #d4af37,0 15px 40px rgba(0,0,0,.6);display:block !important;margin:0 auto !important;float:none !important}
-.btn-wpp{background:#25D366;color:#fff;padding:12px 28px;border-radius:30px;text-decoration:none;font-weight:700;display:inline-block;margin-top:20px}
-.titulo{font-family:Great Vibes;font-size:46px;color:#d4af37;text-align:center;margin:30px 0 8px}.sub{text-align:center;color:#cbd5e1;margin-bottom:28px;font-size:14px}
-.catalogo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;padding:10px}
-.card{background:rgba(255,255,255,.08);border:1px solid rgba(212,175,55,.3);border-radius:20px;overflow:hidden}
-.card img{width:100%;height:200px;object-fit:cover;display:block;background:#12264a}.card-body{padding:16px}
-.card-body h3{color:#f1c94a;font-size:17px}.card-body p{font-size:13px;color:#cbd5e1;margin:8px 0 12px;line-height:1.4}
-.info{display:flex;justify-content:space-between;color:#d4af37;font-weight:700;font-size:13px}.card-body button{width:100%;margin-top:12px;background:linear-gradient(90deg,#d4af37,#f1c94a);color:#0a1931;border:none;padding:12px;border-radius:12px;font-weight:800;cursor:pointer}
-#viewAdmin{display:none;background:#fff;color:#0a1931;border-radius:18px;padding:22px;margin-top:20px}
-#viewAdmin input,#viewAdmin textarea{width:100%;padding:11px;margin:6px 0;border:1px solid #ccc;border-radius:8px}
-footer{text-align:center;padding:30px;color:#94a3b8;font-size:12px;border-top:1px solid rgba(212,175,55,.2);margin-top:40px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Lídia Siqueira - Estética e Beleza</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Chart.js para Relatórios Financeiros -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Google Fonts (Playfair Display & Montserrat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandNavy: '#0B132B',
+            brandNavyDark: '#050914',
+            brandNavyLight: '#1C2541',
+            brandGold: '#D4AF37',
+            brandGoldLight: '#F3E5AB',
+            brandGoldDark: '#AA7C11',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Montserrat"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #050914;
+      color: #E2E8F0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFE5A3 0%, #D4AF37 50%, #996515 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-border {
+      border-image: linear-gradient(to right, #D4AF37, #FFE5A3, #AA7C11) 1;
+    }
+    .gold-button {
+      background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+      color: #050914;
+      transition: all 0.3s ease;
+    }
+    .gold-button:hover {
+      background: linear-gradient(135deg, #FFE5A3 0%, #D4AF37 100%);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+    .card-navy {
+      background: rgba(28, 37, 65, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050914;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D4AF37;
+      border-radius: 4px;
+    }
+  </style>
 </head>
-<body>
-<div class="container">
-<div class="topo"><span style="font-size:11px;color:#94a3b8">Studio Lídia Siqueira • Belém-PA</span><button onclick="abrirAdmin()">🔒 Acesso Proprietária</button></div>
+<body class="min-h-screen flex flex-col justify-between">
 
-<div class="logo-box">
-<img src="./logo.png?v=FINAL100" alt="Logo">
-<a class="btn-wpp" href="https://wa.me/5591981800016?text=Olá%20Lídia!" target="_blank">WhatsApp (91) 98180-0016</a>
-</div>
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
-<h2 class="titulo">Catálogo de Beleza</h2>
-<p class="sub">12 serviços exclusivos • Toque para agendar no WhatsApp</p>
+  <!-- MODAL DE AUTENTICAÇÃO DO PAINEL -->
+  <div id="auth-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="card-navy rounded-2xl max-w-md w-full p-6 text-center shadow-2xl relative border border-brandGold">
+      <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-gray-400 hover:text-brandGold">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+      <div class="w-16 h-16 rounded-full bg-brandGold/10 border border-brandGold flex items-center justify-center mx-auto mb-4">
+        <i class="fas fa-crown text-2xl text-brandGold"></i>
+      </div>
+      <h3 class="font-serif text-2xl font-bold text-brandGold mb-2">Área da Proprietária</h3>
+      <p class="text-xs text-gray-300 mb-6">Acesso restrito para a Sra. Ana Lídia</p>
+      
+      <form onsubmit="handleAuthSubmit(event)" class="space-y-4">
+        <div>
+          <input type="password" id="admin-password-input" placeholder="Digite a senha de acesso" required
+            class="w-full bg-brandNavyDark border border-brandGold/40 rounded-xl px-4 py-3 text-white text-center focus:outline-none focus:border-brandGold transition">
+        </div>
+        <button type="submit" class="w-full gold-button font-bold py-3 rounded-xl shadow-lg">
+          Acessar Painel
+        </button>
+      </form>
+    </div>
+  </div>
 
-<div id="catalogo" class="catalogo"></div>
+  <!-- MAIN HEADER / HERO WITH LOGO -->
+  <header class="relative bg-gradient-to-b from-brandNavyDark via-brandNavy to-brandNavyDark border-b border-brandGold/30 py-8 px-4 text-center">
+    <div class="max-w-5xl mx-auto flex flex-col items-center">
+      
+      <!-- LOGO OFICIAL CENTRALIZADA -->
+      <div class="relative group mb-4">
+        <div class="absolute -inset-1 bg-gradient-to-r from-brandGold via-brandGoldLight to-brandGoldDark rounded-full blur opacity-50 group-hover:opacity-75 transition duration-500"></div>
+        <img id="logo-img" src="logo.png" alt="Studio Lídia Siqueira - Estética e Beleza" 
+             class="relative w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-4 border-brandGold shadow-2xl transition transform group-hover:scale-105"
+             onerror="this.src='https://placehold.co/400x400/0B132B/D4AF37?text=Studio+Lidia+Siqueira'">
+      </div>
 
-<div id="viewAdmin">
-<h2>👑 Painel Proprietária</h2>
-<p style="font-size:13px;color:#64748b;margin:8px 0">Adicione novos serviços - aparece na hora para clientes.</p>
-<input id="nome" placeholder="Nome do serviço"><textarea id="desc" placeholder="Descrição"></textarea><input id="preco" placeholder="Preço ex: R$ 75"><input id="tempo" placeholder="Tempo ex: 45 min"><input id="foto" placeholder="Link da foto (opcional)">
-<div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
-<button onclick="adicionar()" style="background:#0a1931;color:#d4af37;padding:10px 16px;border-radius:8px;border:none;font-weight:700">+ Adicionar Serviço</button>
-<button onclick="voltar()" style="background:#e2e8f0;padding:10px 16px;border-radius:8px;border:none">Voltar</button>
-<button onclick="resetar()" style="background:#fee2e2;color:#b91c1c;padding:10px 16px;border-radius:8px;border:none">Resetar 12 Padrão</button>
-</div>
-<div id="listaAdmin" style="margin-top:16px;display:grid;gap:8px"></div>
-</div>
+      <h1 class="font-serif text-3xl md:text-5xl font-bold gold-gradient-text tracking-wide mb-1">Studio Lídia Siqueira</h1>
+      <p class="text-brandGoldLight text-sm md:text-base font-light uppercase tracking-widest mb-3">Estética & Beleza Premium</p>
+      
+      <!-- CONTATO / WHATSAPP HEADER -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mt-2">
+        <a href="https://wa.me/5591981800016" target="_blank" 
+           class="inline-flex items-center gap-2 bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 border border-emerald-500/40 px-4 py-1.5 rounded-full text-xs font-semibold backdrop-blur-sm transition">
+          <i class="fab fa-whatsapp text-emerald-400"></i> (91) 98180-0016
+        </a>
+        <span class="text-gray-500 hidden sm:inline">•</span>
+        <button onclick="openAuthModal()" class="inline-flex items-center gap-2 bg-brandGold/10 hover:bg-brandGold/20 text-brandGold border border-brandGold/30 px-4 py-1.5 rounded-full text-xs font-semibold backdrop-blur-sm transition">
+          <i class="fas fa-user-shield"></i> Painel Proprietária
+        </button>
+      </div>
+    </div>
+  </header>
 
-<footer>Studio Lídia Siqueira - Beleza que transforma • Belém • (91) 98180-0016</footer>
-</div>
+  <!-- NAVIGATION TABS -->
+  <nav class="sticky top-0 z-40 bg-brandNavyDark/95 backdrop-blur-md border-b border-brandGold/20 py-3 px-4">
+    <div class="max-w-5xl mx-auto flex justify-center gap-2 md:gap-4 text-xs md:text-sm font-medium">
+      <button onclick="switchTab('client')" id="tab-client" class="tab-btn px-4 py-2 rounded-xl border border-brandGold text-brandGold font-semibold bg-brandGold/10 transition flex items-center gap-2">
+        <i class="fas fa-sparkles"></i> Procedimentos & Agendamento
+      </button>
+      <button onclick="switchTab('admin')" id="tab-admin" class="tab-btn px-4 py-2 rounded-xl border border-transparent text-gray-400 hover:text-brandGold transition flex items-center gap-2">
+        <i class="fas fa-chart-line"></i> Gestão do Studio
+      </button>
+    </div>
+  </nav>
 
-<script>
-const PADRAO = [
-{n:"Limpeza de Pele Profunda",d:"Extração de cravos, alta frequência e máscara calmante.",p:"R$ 129",t:"90 min",img:"https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600"},
-{n:"Design de Sobrancelhas",d:"Visagismo com henna e acabamento perfeito.",p:"R$ 55",t:"45 min",img:"https://images.unsplash.com/photo-1589710751893-36be01f5bb65?w=600"},
-{n:"Extensão de Cílios Fio a Fio",d:"Volume leve, natural e duradouro.",p:"R$ 165",t:"120 min",img:"https://images.unsplash.com/photo-1595476108010-b4d1f102b4b1?w=600"},
-{n:"Depilação a Laser",d:"Tecnologia indolor por área - axila, buço ou virilha.",p:"R$ 89/área",t:"30 min",img:"https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600"},
-{n:"Massagem Modeladora",d:"Reduz medidas e combate celulite.",p:"R$ 110",t:"60 min",img:"https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600"},
-{n:"Drenagem Linfática",d:"Elimina inchaço e retenção de líquido.",p:"R$ 99",t:"60 min",img:"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600"},
-{n:"Microagulhamento",d:"Estimula colágeno e clareia manchas.",p:"R$ 230",t:"90 min",img:"https://images.unsplash.com/photo-1552693673-1bf958298935?w=600"},
-{n:"Peeling Químico",d:"Renovação celular contra melasma e manchas.",p:"R$ 185",t:"60 min",img:"https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600"},
-{n:"Hidratação Facial + LED",d:"Hidratação intensiva com LED para glow.",p:"R$ 95",t:"50 min",img:"https://images.unsplash.com/photo-1570554886111-e1fc34d6d5a8?w=600"},
-{n:"Lash Lifting",d:"Curvatura natural dos cílios por 6 semanas.",p:"R$ 115",t:"60 min",img:"https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=600"},
-{n:"Brow Lamination",d:"Sobrancelhas alinhadas e volumosas.",p:"R$ 95",t:"50 min",img:"https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600"},
-{n:"Spa dos Pés + Reflexologia",d:"Esfoliação, hidratação e relaxamento.",p:"R$ 69",t:"60 min",img:"https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=600"}
-];
-function getDados(){let s=localStorage.getItem('studio_servicos');if(s
+  <!-- CONTENT AREA -->
+  <main class="max-w-5xl mx-auto px-4 py-8 w-full flex-1">
+
+    <!-- ================= CLIENT VIEW ================= -->
+    <section id="view-client" class="space-y-8">
+      
+      <!-- BARRA DE BUSCA E FILTROS -->
+      <div class="card-navy p-4 md:p-6 rounded-2xl shadow-xl space-y-4">
+        <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div class="relative w-full md:w-2/3">
+            <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-brandGold/60"></i>
+            <input type="text" id="search-input" oninput="renderCatalog()" placeholder="Buscar procedimento (ex: Limpeza de Pele, Botox, Massagem)..."
+              class="w-full bg-brandNavyDark/80 border border-brandGold/30 rounded-xl pl-11 pr-4 py-3 text-white text-sm focus:outline-none focus:border-brandGold transition">
+          </div>
+          <div class="flex gap-2 w-full md:w-auto overflow-x-auto pb-1 md:pb-0">
+            <button onclick="filterCategory('all')" class="cat-filter-btn active-cat bg-brandGold text-brandNavyDark px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap">
+              Todos (15)
+            </button>
+            <button onclick="filterCategory('facial')" class="cat-filter-btn bg-brandNavyDark border border-brandGold/30 text-gray-300 hover:border-brandGold px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap">
+              Facial
+            </button>
+            <button onclick="filterCategory('corporal')" class="cat-filter-btn bg-brandNavyDark border border-brandGold/30 text-gray-300 hover:border-brandGold px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap">
+              Corporal
+            </button>
+            <button onclick="filterCategory('estetica')" class="cat-filter-btn bg-brandNavyDark border border-brandGold/30 text-gray-300 hover:border-brandGold px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap">
+              Avançada
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATALOG GRID (15 PROCEDIMENTOS) -->
+      <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injetado dinamicamente via JS -->
+      </div>
+    </section>
+
+    <!-- ================= ADMIN VIEW ================= -->
+    <section id="view-admin" class="hidden space-y-8">
+      
+      <!-- ADMIN NAVBAR / STATUS -->
+      <div class="card-navy p-4 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4 border-l-4 border-l-brandGold">
+        <div>
+          <h2 class="font-serif text-xl font-bold text-brandGold">Painel Executivo Studio Lídia Siqueira</h2>
+          <p class="text-xs text-gray-400">Bem-vinda, Sra. Ana Lídia • Gestão Financeira & Estoque</p>
+        </div>
+        <button onclick="logoutAdmin()" class="px-4 py-2 bg-red-500/20 text-red-400 border border-red-500/30 rounded-xl text-xs font-semibold hover:bg-red-500/30 transition">
+          <i class="fas fa-sign-out-alt"></i> Sair do Painel
+        </button>
+      </div>
+
+      <!-- RESUMO FINANCEIRO E ESTOQUE CARDS -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="card-navy p-5 rounded-2xl border-t-2 border-brandGold">
+          <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Faturamento Semanal</p>
+          <h3 class="font-serif text-2xl font-bold text-white" id="stat-weekly-revenue">R$ 0,00</h3>
+          <span class="text-[10px] text-emerald-400 flex items-center gap-1 mt-2">
+            <i class="fas fa-arrow-up"></i> Atualização em tempo real
+          </span>
+        </div>
+
+        <div class="card-navy p-5 rounded-2xl border-t-2 border-brandGold">
+          <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Faturamento Mensal</p>
+          <h3 class="font-serif text-2xl font-bold text-brandGold" id="stat-monthly-revenue">R$ 0,00</h3>
+          <span class="text-[10px] text-brandGoldLight flex items-center gap-1 mt-2">
+            <i class="fas fa-calendar-alt"></i> Mês Atual
+          </span>
+        </div>
+
+        <div class="card-navy p-5 rounded-2xl border-t-2 border-brandGold">
+          <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Agendamentos Totais</p>
+          <h3 class="font-serif text-2xl font-bold text-white" id="stat-total-appointments">0</h3>
+          <span class="text-[10px] text-gray-400 flex items-center gap-1 mt-2">
+            <i class="fas fa-check-circle text-emerald-400"></i> Registrados
+          </span>
+        </div>
+
+        <div class="card-navy p-5 rounded-2xl border-t-2 border-amber-500">
+          <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Alertas de Estoque</p>
+          <h3 class="font-serif text-2xl font-bold text-amber-400" id="stat-low-stock-count">0</h3>
+          <span class="text-[10px] text-amber-400/80 flex items-center gap-1 mt-2">
+            <i class="fas fa-exclamation-triangle"></i> Produtos &le; 4 unidades
+          </span>
+        </div>
+      </div>
+
+      <!-- GRÁFICOS FINANCEIROS -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="card-navy p-5 rounded-2xl shadow-lg">
+          <h3 class="font-serif text-lg font-bold text-brandGold mb-4 flex items-center gap-2">
+            <i class="fas fa-chart-bar text-brandGold"></i> Receita Semanal (Últimos 7 dias)
+          </h3>
+          <div class="h-64">
+            <canvas id="weeklyChart"></canvas>
+          </div>
+        </div>
+
+        <div class="card-navy p-5 rounded-2xl shadow-lg">
+          <h3 class="font-serif text-lg font-bold text-brandGold mb-4 flex items-center gap-2">
+            <i class="fas fa-chart-pie text-brandGold"></i> Distribuição Mensal por Categoria
+          </h3>
+          <div class="h-64">
+            <canvas id="monthlyChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO DE CONTROLE DE ESTOQUE DE INSUMOS -->
+      <div class="card-navy p-6 rounded-2xl shadow-xl space-y-4">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div>
+            <h3 class="font-serif text-xl font-bold text-brandGold flex items-center gap-2">
+              <i class="fas fa-boxes text-brandGold"></i> Controle de Insumos & Produtos
+            </h3>
+            <p class="text-xs text-gray-400">Monitore itens de uso diário. Produtos com &le; 4 unidades disparam alertas automatizados.</p>
+          </div>
+          <button onclick="openStockModal()" class="gold-button px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2">
+            <i class="fas fa-plus"></i> Adicionar Insumo
+          </button>
+        </div>
+
+        <!-- Tabela de Estoque -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm text-gray-300">
+            <thead class="bg-brandNavyDark/80 text-brandGold text-xs uppercase border-b border-brandGold/30">
+              <tr>
+                <th class="py-3 px-4">Item / Insumo</th>
+                <th class="py-3 px-4">Categoria</th>
+                <th class="py-3 px-4 text-center">Quantidade</th>
+                <th class="py-3 px-4 text-center">Status</th>
+                <th class="py-3 px-4 text-right">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="stock-table-body" class="divide-y divide-brandGold/10">
+              <!-- Renderizado dinamicamente via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- EDIÇÃO DE CATÁLOGO / PROCEDIMENTOS -->
+      <div class="card-navy p-6 rounded-2xl shadow-xl space-y-4">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div>
+            <h3 class="font-serif text-xl font-bold text-brandGold flex items-center gap-2">
+              <i class="fas fa-concierge-bell text-brandGold"></i> Gestão de Serviços & Valores
+            </h3>
+            <p class="text-xs text-gray-400">Edite preços, fotos e descrições exibidos para os clientes.</p>
+          </div>
+          <button onclick="openProcedureModal()" class="gold-button px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2">
+            <i class="fas fa-plus"></i> Novo Procedimento
+          </button>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm text-gray-300">
+            <thead class="bg-brandNavyDark/80 text-brandGold text-xs uppercase border-b border-brandGold/30">
+              <tr>
+                <th class="py-3 px-4">Procedimento</th>
+                <th class="py-3 px-4">Categoria</th>
+                <th class="py-3 px-4">Duração</th>
+                <th class="py-3 px-4">Valor (R$)</th>
+                <th class="py-3 px-4 text-right">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="admin-catalog-table-body" class="divide-y divide-brandGold/10">
+              <!-- Renderizado via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- MODAL DE AGENDAMENTO (CLIENTE) -->
+  <div id="booking-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="card-navy rounded-2xl max-w-lg w-full p-6 shadow-2xl relative border border-brandGold max-h-[90vh] overflow-y-auto">
+      <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-brandGold">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+
+      <div class="text-center mb-6">
+        <p class="text-xs text-brandGold uppercase font-semibold tracking-wider">Agendamento WhatsApp</p>
+        <h3 class="font-serif text-2xl font-bold text-white" id="modal-proc-title">Nome do Procedimento</h3>
+        <p class="text-brandGold font-bold text-lg mt-1" id="modal-proc-price">R$ 0,00</p>
+      </div>
+
+      <form onsubmit="confirmBooking(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1">Seu Nome Completo *</label>
+          <input type="text" id="client-name" required placeholder="Digite seu nome"
+            class="w-full bg-brandNavyDark border border-brandGold/30 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brandGold">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Data Desejada *</label>
+            <input type="date" id="booking-date" required
+              class="w-full bg-brandNavyDark border border-brandGold/30 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brandGold">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Horário Preferencial *</label>
+            <input type="time" id="booking-time" required
+              class="w-full bg-brandNavyDark border border-brandGold/30 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brandGold">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1">Observações ou Preferências</label>
+          <textarea id="booking-notes" rows="2" placeholder="Primeira vez? Alguma sensibilidade na pele?"
+            class="w-full bg-brandNavyDark border border-brandGold/30 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brandGold"></textarea>
+        </div>
+
+        <div class="p-3 bg-emerald-900/20 border border-emerald-500/30 rounded-xl text-xs text-emerald-300 flex items-center gap-3">
+          <i class="fab fa-whatsapp text-2xl text-emerald-400"></i>
+          <span>Você será redirecionada para o WhatsApp do Studio Lídia Siqueira <strong>(91 98180-0016)</strong> para confirmar o horário com a Sra. Ana Lídia.</span>
+        </div>
+
+        <button type="submit" class="w-full gold-button font-bold py-3 rounded-xl shadow-lg flex items-center justify-center gap-2">
+          <i class="fab fa-whatsapp text-lg"></i> Confirmar e Enviar Mensagem
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL DE ADICIONAR/EDITAR INSUMO -->
+  <div id="stock-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="card-navy rounded-2xl max-w-md w-full p-6 shadow-2xl relative border border-brandGold">
+      <button onclick="closeStockModal()" class="absolute top-4 right-4 text-gray-400 hover:text-brandGold">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+
+      <h3 class="font-serif text-xl font-bold text-brandGold mb-4" id="stock-modal-title">Novo Insumo / Produto</h3>
+
+      <form onsubmit="saveStockItem(event)" class="space-y-4">
+        <input type="hidden" id="stock-item-id">
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1">Nome do Insumo</label>
+          <input type="text" id="stock-item-name" required placeholder="Ex: Toxina Botulínica, Sérum Vitamina C"
+            class="w-full bg-brandNavyDark border border-brandGold/30 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brandGold">
+        </div>
+        
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Categoria</label>
+            <select id="stock-item-category" class="w-full bg-brandNavyDark border border-brandGold/30 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-brandGold">
+              <option value="Facial">Facial</option>
+              <option value="Corporal">Corporal</option>
+              <option value="Descartáveis">Descartáveis</option>
+              <option value="Aparelhos">Aparelhos/Outros</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Quantidade</label>
+            <input type="number" id="stock-item-qty" min="0" required placeholder="0"
+              class="w-full bg-brandNavyDark border border-brandGold/30 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brandGold">
+          </div>
+        </div>
+
+        <button type="submit" class="w-full gold-button font-bold py-3 rounded-xl shadow-lg mt-2">
+          Salvar no Estoque
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL DE PROCEDIMENTO (ADMIN) -->
+  <div id="procedure-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="card-navy rounded-2xl max-w-md w-full p-6 shadow-2xl relative border border-brandGold max-h-[90vh] overflow-y-auto">
+      <button onclick="closeProcedureModal()" class="absolute top-4 right-4 text-gray-400 hover:text-brandGold">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+
+      <h3 class="font-serif text-xl font-bold text-brandGold mb-4" id="proc-modal-title">Novo Procedimento</h3>
+
+      <form onsubmit="saveProcedure(event)" class="space-y-4">
+        <input type="hidden" id="proc-item-id">
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1">Nome do Procedimento</label>
+          <input type="text" id="proc-item-title" required placeholder="Ex: Peeling Diamond"
+            class="w-full bg-brandNavyDark border border-brandGold/30 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brandGold">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Categoria</label>
+            <select id="proc-item-category" class="w-full bg-brandNavyDark border border-brandGold/30 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:border-brandGold">
+              <option value="facial">Facial</option>
+              <option value="corporal">Corporal</option>
+              <option value="estetica">Estética Avançada</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Preço (R$)</label>
+            <input type="number" step="0.01" id="proc-item-price" required placeholder="150.00"
+              class="w-full bg-brandNavyDark border border-brandGold/30 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brandGold">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1">Duração Estimada</label>
+          <input type="text" id="proc-item-duration" required placeholder="Ex: 60 min"
+            class="w-full bg-brandNavyDark border border-brandGold/30 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brandGold">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1">URL da Imagem</label>
+          <input type="url" id="proc-item-image" required placeholder="https://..."
+            class="w-full bg-brandNavyDark border border-brandGold/30 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brandGold">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1">Descrição</label>
+          <textarea id="proc-item-desc" rows="3" required placeholder="Detalhes dos benefícios do tratamento..."
+            class="w-full bg-brandNavyDark border border-brandGold/30 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brandGold"></textarea>
+        </div>
+
+        <button type="submit" class="w-full gold-button font-bold py-3 rounded-xl shadow-lg mt-2">
+          Salvar Procedimento
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-brandNavyDark border-t border-brandGold/20 py-8 px-4 text-center text-xs text-gray-400 mt-12">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <img src="1000508253.jpg" alt="Logo" class="w-10 h-10 rounded-full border border-brandGold object-cover" onerror="this.src='https://placehold.co/100x100/0B132B/D4AF37?text=LS'">
+        <div class="text-left">
+          <p class="font-serif font-bold text-brandGold">Studio Lídia Siqueira</p>
+          <p class="text-[10px] text-gray-400">Estética e Beleza • Belém / Pará</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="flex items-center justify-center md:justify-end gap-2 text-brandGold">
+          <i class="fab fa-whatsapp"></i> (91) 98180-0016
+        </p>
+        <p class="mt-1 text-[10px] text-gray-500">&copy; 2026 Studio Lídia Siqueira. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT APLICAÇÃO -->
+  <script>
+    // ================= DADOS INICIAIS DA APLICAÇÃO =================
+    const DEFAULT_PROCEDURES = [
+      {
+        id: "p1",
+        title: "Limpeza de Pele Profunda",
+        category: "facial",
+        price: 180.00,
+        duration: "60 min",
+        desc: "Remoção de impurezas, cravos e células mortas com vapor de ozônio e alta frequência para renovação celular.",
+        image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "p2",
+        title: "Toxina Botulínica (Botox)",
+        category: "estetica",
+        price: 850.00,
+        duration: "45 min",
+        desc: "Suavização de rugas de expressão na testa, pés de galinha e glabela com efeito natural e duradouro.",
+        image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "p3",
+        title: "Preenchimento Labial",
+        category: "estetica",
+        price: 950.00,
+        duration: "50 min",
+        desc: "Esculpimento e hidratação dos lábios com ácido hialurônico de alta pureza, garantindo contorno impecável.",
+        image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "p4",
+        title: "Drenagem Linfática Corporal",
+        category: "corporal",
+        price: 140.00,
+        duration: "50 min",
+        desc: "Massagem suave para redução de retenção de líquidos, desintoxicação do organismo e alívio do inchaço.",
+        image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "p5",
+        title: "Microagulhamento Facial Gold",
+        category: "facial",
+        price: 280.00,
+        duration: "60 min",
+        desc: "Estímulo intenso de colágeno para atenuar cicatrizes de acne, manchas e linhas finas com drug delivery.",
+        image: "https://images.unsplash.com/photo-1512290900673-700200122240?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "p6",
+        title: "Peeling Químico Renovador",
+        category: "facial",
+        price: 220.00,
+        duration: "45 min",
+        desc: "Aplicação de ácidos dermatológicos para uniformização do tom da pele, clareamento de melasma e brilho.",
+        image: "https://images.unsplash.com/photo-1512290900673-700200122240?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "p7",
+        title: "Massagem Modeladora Turbo",
+        category: "corporal",
+        price: 160.00,
+        duration: "50 min",
+        desc: "Manobras firmes para redução de medidas localizadas, celulite e definição das curvas corporais.",
+        image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "p8",
+        title: "Bioestimulador de Colágeno",
+        category: "estetica",
+        price: 1400.00,
+        duration: "60 min",
+        desc: "Tratamento de alta performance para combate à flacidez facial e corporal, estimulando o colágeno natural.",
+        image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "p9",
+        title: "Design de Sobrancelhas com Henna",
+        category: "facial",
+        price: 80.00,
+        duration: "40 min",
+        desc: "Mapeamento facial visagista com alinhamento dos fios e aplicação de henna de alta fixação.",
+        image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "p10",
+        title: "Lifting de Cílios (Lash Lifting)",
+        category: "facial",
+        price: 130.00,
+        duration: "50 min",
+        desc: "Curvatura e pigmentação natural dos cílios com nutrição de queratina para um olhar marcante.",
+        image: "https://images.unsplash.com/photo-1583001809873-a1284d5f3032?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "p11",
+        title: "Hidratação Labial Velvet Glow",
+        category: "facial",
+        price: 110.00,
+        duration: "30 min",
+        desc: "Microdermabrasão e nutrição com sérum de ácido hialurônico e vitaminas para lábios sedosos.",
+        image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "p12",
+        title: "Criolipólise Localizada",
+        category: "corporal",
+        price: 350.00,
+        duration: "60 min",
+        desc: "Congelamento avançado de gordura localizada com eliminação gradual e segura das células adiposas.",
+        image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "p13",
+        title: "Radiofrequência Facial Firmadora",
+        category: "facial",
+        price: 190.00,
+        duration: "45 min",
+        desc: "Aquecimento controlado do tecido para reorganização do colágeno, efeito lifting sem agulhas.",
+        image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "p14",
+        title: "Carboxiterapia para Estrias",
+        category: "corporal",
+        price: 150.00,
+        duration: "40 min",
+        desc: "Infusão de CO2 medicinal para melhora da circulação local e regeneração de tecidos com estrias.",
+        image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "p15",
+        title: "Protocolo Detox Redutor",
+        category: "corporal",
+        price: 250.00,
+        duration: "75 min",
+        desc: "Associação de manta térmica com ultrassom e argiloterapia desintoxicante para perda rápida de medidas.",
+        image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=600&q=80"
+      }
+    ];
+
+    const DEFAULT_STOCK = [
+      { id: "s1", name: "Toxina Botulínica 100UI", category: "Facial", quantity: 3 },
+      { id: "s2", name: "Ácido Hialurônico 1ml", category: "Facial", quantity: 8 },
+      { id: "s3", name: "Creme de Drenagem 1kg", category: "Corporal", quantity: 2 },
+      { id: "s4", name: "Kits de Agulhas e Seringas Descartáveis", category: "Descartáveis", quantity: 15 },
+      { id: "s5", name: "Sérum Vitamina C Concentrada", category: "Facial", quantity: 4 },
+      { id: "s6", name: "Máscara de Ouro 500g", category: "Facial", quantity: 1 }
+    ];
+
+    const DEFAULT_APPOINTMENTS = [
+      { date: "2026-10-12", amount: 360, category: "facial" },
+      { date: "2026-10-13", amount: 850, category: "estetica" },
+      { date: "2026-10-14", amount: 300, category: "corporal" },
+      { date: "2026-10-15", amount: 950, category: "estetica" },
+      { date: "2026-10-16", amount: 400, category: "facial" },
+      { date: "2026-10-17", amount: 620, category: "corporal" }
+    ];
+
+    // ESTADO DA APLICAÇÃO EM LOCALSTORAGE
+    let procedures = JSON.parse(localStorage.getItem('studio_lidia_procedures')) || DEFAULT_PROCEDURES;
+    let stock = JSON.parse(localStorage.getItem('studio_lidia_stock')) || DEFAULT_STOCK;
+    let appointments = JSON.parse(localStorage.getItem('studio_lidia_appointments')) || DEFAULT_APPOINTMENTS;
+    let isAdminAuthenticated = false;
+    let currentCategoryFilter = 'all';
+    let selectedProcForBooking = null;
+
+    // INSTÂNCIAS DOS GRÁFICOS
+    let weeklyChartInstance = null;
+    let monthlyChartInstance = null;
+
+    // ================= INICIALIZAÇÃO =================
+    window.onload = function() {
+      renderCatalog();
+    };
+
+    function saveState() {
+      localStorage.setItem('studio_lidia_procedures', JSON.stringify(procedures));
+      localStorage.setItem('studio_lidia_stock', JSON.stringify(stock));
+      localStorage.setItem('studio_lidia_appointments', JSON.stringify(appointments));
+    }
+
+    // ================= TOAST NOTIFICATION =================
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      
+      const bgColor = type === 'success' ? 'bg-brandNavy border-brandGold text-brandGold' : 'bg-red-900 border-red-500 text-white';
+      
+      toast.className = `pointer-events-auto flex items-center gap-3 px-4 py-3 rounded-xl border shadow-2xl backdrop-blur-md transition transform translate-y-2 opacity-0 text-sm font-medium ${bgColor}`;
+      toast.innerHTML = `
+        <i class="fas ${type === 'success' ? 'fa-check-circle text-brandGold' : 'fa-exclamation-circle text-red-400'} text-lg"></i>
+        <span>${message}</span>
+      `;
+
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      }, 10);
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    // ================= NAVEGAÇÃO ENTRE ABAS =================
+    function switchTab(tab) {
+      if (tab === 'admin' && !isAdminAuthenticated) {
+        openAuthModal();
+        return;
+      }
+
+      const clientView = document.getElementById('view-client');
+      const adminView = document.getElementById('view-admin');
+      const btnClient = document.getElementById('tab-client');
+      const btnAdmin = document.getElementById('tab-admin');
+
+      if (tab === 'client') {
+        clientView.classList.remove('hidden');
+        adminView.classList.add('hidden');
+        btnClient.className = 'tab-btn px-4 py-2 rounded-xl border border-brandGold text-brandGold font-semibold bg-brandGold/10 transition flex items-center gap-2';
+        btnAdmin.className = 'tab-btn px-4 py-2 rounded-xl border border-transparent text-gray-400 hover:text-brandGold transition flex items-center gap-2';
+      } else {
+        clientView.classList.add('hidden');
+        adminView.classList.remove('hidden');
+        btnAdmin.className = 'tab-btn px-4 py-2 rounded-xl border border-brandGold text-brandGold font-semibold bg-brandGold/10 transition flex items-center gap-2';
+        btnClient.className = 'tab-btn px-4 py-2 rounded-xl border border-transparent text-gray-400 hover:text-brandGold transition flex items-center gap-2';
+        
+        renderAdminDashboard();
+      }
+    }
+
+    // ================= AUTENTICAÇÃO PROPRIETÁRIA =================
+    function openAuthModal() {
+      document.getElementById('auth-modal').classList.remove('hidden');
+      document.getElementById('admin-password-input').value = '';
+      document.getElementById('admin-password-input').focus();
+    }
+
+    function closeAuthModal() {
+      document.getElementById('auth-modal').classList.add('hidden');
+    }
+
+    function handleAuthSubmit(e) {
+      e.preventDefault();
+      const pwd = document.getElementById('admin-password-input').value;
+      
+      // Senha definida conforme requisitado: lidia2026
+      if (pwd === 'lidia2026') {
+        isAdminAuthenticated = true;
+        closeAuthModal();
+        showToast('Acesso concedido. Bem-vinda Sra. Ana Lídia!');
+        switchTab('admin');
+      } else {
+        showToast('Senha incorreta! Tente novamente.', 'error');
+      }
+    }
+
+    function logoutAdmin() {
+      isAdminAuthenticated = false;
+      showToast('Sessão encerrada com segurança.');
+      switchTab('client');
+    }
+
+    // ================= CATÁLOGO DE PROCEDIMENTOS (CLIENTE) =================
+    function filterCategory(cat) {
+      currentCategoryFilter = cat;
+      
+      document.querySelectorAll('.cat-filter-btn').forEach(btn => {
+        btn.className = 'cat-filter-btn bg-brandNavyDark border border-brandGold/30 text-gray-300 hover:border-brandGold px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap';
+      });
+
+      event.target.className = 'cat-filter-btn active-cat bg-brandGold text-brandNavyDark px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap';
+      
+      renderCatalog();
+    }
+
+    function renderCatalog() {
+      const grid = document.getElementById('catalog-grid');
+      const search = document.getElementById('search-input').value.toLowerCase();
+
+      const filtered = procedures.filter(p => {
+        const matchesCat = currentCategoryFilter === 'all' || p.category === currentCategoryFilter;
+        const matchesSearch = p.title.toLowerCase().includes(search) || p.desc.toLowerCase().includes(search);
+        return matchesCat && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-12 card-navy rounded-2xl">
+            <i class="fas fa-search-minus text-4xl text-brandGold/40 mb-3"></i>
+            <p class="text-gray-400 text-sm">Nenhum procedimento encontrado.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => `
+        <div class="card-navy rounded-2xl overflow-hidden shadow-xl hover:border-brandGold transition duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="relative h-48 overflow-hidden">
+              <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                   onerror="this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80'">
+              <div class="absolute top-3 right-3 bg-brandNavyDark/80 backdrop-blur-md text-brandGold text-[10px] uppercase font-bold px-3 py-1 rounded-full border border-brandGold/30">
+                ${p.category === 'facial' ? 'Facial' : p.category === 'corporal' ? 'Corporal' : 'Estética Avançada'}
+              </div>
+            </div>
+
+            <div class="p-5">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="font-serif text-lg font-bold text-white group-hover:text-brandGold transition">${p.title}</h3>
+              </div>
+              <p class="text-xs text-gray-300 line-clamp-3 mb-4 leading-relaxed">${p.desc}</p>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0">
+            <div class="flex items-center justify-between border-t border-brandGold/10 pt-4 mb-4">
+              <span class="text-xs text-gray-400 flex items-center gap-1">
+                <i class="far fa-clock text-brandGold"></i> ${p.duration}
+              </span>
+              <span class="font-serif text-xl font-bold text-brandGold">
+                R$ ${p.price.toFixed(2).replace('.', ',')}
+              </span>
+            </div>
+
+            <button onclick="openBookingModal('${p.id}')" class="w-full gold-button font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-2 shadow-md">
+              <i class="fab fa-whatsapp text-sm"></i> Agendar Procedimento
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ================= AGENDAMENTO WHATSAPP =================
+    function openBookingModal(procId) {
+      selectedProcForBooking = procedures.find(p => p.id === procId);
+      if (!selectedProcForBooking) return;
+
+      document.getElementById('modal-proc-title').innerText = selectedProcForBooking.title;
+      document.getElementById('modal-proc-price').innerText = `R$ ${selectedProcForBooking.price.toFixed(2).replace('.', ',')}`;
+      
+      // Ajustar data padrão para hoje
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('booking-date').min = today;
+      document.getElementById('booking-date').value = today;
+
+      document.getElementById('booking-modal').classList.remove('hidden');
+    }
+
+    function closeBookingModal() {
+      document.getElementById('booking-modal').classList.add('hidden');
+    }
+
+    function confirmBooking(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('client-name').value;
+      const date = document.getElementById('booking-date').value;
+      const time = document.getElementById('booking-time').value;
+      const notes = document.getElementById('booking-notes').value;
+
+      // Formatar data em PT-BR
+      const dateFormatted = date.split('-').reverse().join('/');
+
+      // Mensagem para o WhatsApp da Sra. Ana Lídia (91 98180-0016)
+      const message = `Olá, Sra. Ana Lídia! Gostaria de agendar um atendimento no *Studio Lídia Siqueira*:\n\n` +
+                      `✨ *Procedimento:* ${selectedProcForBooking.title}\n` +
+                      `💵 *Valor:* R$ ${selectedProcForBooking.price.toFixed(2).replace('.', ',')}\n` +
+                      `👤 *Cliente:* ${name}\n` +
+                      `📅 *Data:* ${dateFormatted}\n` +
+                      `⏰ *Horário:* ${time}\n` +
+                      (notes ? `📝 *Observações:* ${notes}\n\n` : '\n') +
+                      `Aguardos a confirmação do horário! Oito abraços!`;
+
+      // Registrar agendamento nos relatórios
+      appointments.push({
+        date: date,
+        amount: selectedProcForBooking.price,
+        category: selectedProcForBooking.category
+      });
+      saveState();
+
+      // Abrir WhatsApp
+      const whatsappUrl = `https://wa.me/5591981800016?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+
+      closeBookingModal();
+      showToast('Redirecionando para o WhatsApp do Studio...');
+    }
+
+    // ================= DASHBOARD ADMIN & RELATÓRIOS =================
+    function renderAdminDashboard() {
+      calculateStats();
+      renderStockTable();
+      renderAdminCatalogTable();
+      renderCharts();
+    }
+
+    function calculateStats() {
+      // Receita Semanal (últimos 7 dias)
+      const now = new Date();
+      const sevenDaysAgo = new Date();
+      sevenDaysAgo.setDate(now.getDate() - 7);
+
+      let weeklyRev = 0;
+      let monthlyRev = 0;
+      const currentMonth = now.getMonth();
+      const currentYear = now.getFullYear();
+
+      appointments.forEach(app => {
+        const appDate = new Date(app.date);
+        if (appDate >= sevenDaysAgo) {
+          weeklyRev += app.amount;
+        }
+        if (appDate.getMonth() === currentMonth && appDate.getFullYear() === currentYear) {
+          monthlyRev += app.amount;
+        }
+      });
+
+      // Alertas de estoque <= 4
+      const lowStockItems = stock.filter(item => item.quantity <= 4);
+
+      document.getElementById('stat-weekly-revenue').innerText = `R$ ${weeklyRev.toFixed(2).replace('.', ',')}`;
+      document.getElementById('stat-monthly-revenue').innerText = `R$ ${monthlyRev.toFixed(2).replace('.', ',')}`;
+      document.getElementById('stat-total-appointments').innerText = appointments.length;
+      document.getElementById('stat-low-stock-count').innerText = lowStockItems.length;
+    }
+
+    // ================= ESTOQUE DE INSUMOS (ALERTA <= 4) =================
+    function renderStockTable() {
+      const tbody = document.getElementById('stock-table-body');
+      
+      tbody.innerHTML = stock.map(item => {
+        const isLow = item.quantity <= 4;
+        return `
+          <tr class="hover:bg-brandNavyDark/50 transition">
+            <td class="py-3 px-4 font-semibold text-white flex items-center gap-2">
+              ${isLow ? '<i class="fas fa-exclamation-triangle text-amber-400 text-xs" title="Estoque Baixo"></i>' : ''}
+              ${item.name}
+            </td>
+            <td class="py-3 px-4 text-xs text-gray-400">${item.category}</td>
+            <td class="py-3 px-4 text-center font-bold ${isLow ? 'text-amber-400' : 'text-emerald-400'}">
+              ${item.quantity} un
+            </td>
+            <td class="py-3 px-4 text-center">
+              ${isLow 
+                ? '<span class="bg-amber-500/20 text-amber-400 border border-amber-500/30 px-2.5 py-1 rounded-full text-[10px] font-bold">Estoque Baixo (&le;4)</span>' 
+                : '<span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2.5 py-1 rounded-full text-[10px] font-bold">OK</span>'}
+            </td>
+            <td class="py-3 px-4 text-right space-x-2">
+              <button onclick="changeStockQty('${item.id}', 1)" class="p-1.5 bg-brandGold/20 text-brandGold rounded-lg hover:bg-brandGold/30 text-xs">
+                <i class="fas fa-plus"></i>
+              </button>
+              <button onclick="changeStockQty('${item.id}', -1)" class="p-1.5 bg-brandNavyLight text-gray-300 rounded-lg hover:bg-gray-700 text-xs">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button onclick="deleteStockItem('${item.id}')" class="p-1.5 bg-red-500/20 text-red-400 rounded-lg hover:bg-red-500/30 text-xs">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function changeStockQty(id, delta) {
+      const item = stock.find(i => i.id === id);
+      if (item) {
+        item.quantity = Math.max(0, item.quantity + delta);
+        saveState();
+        renderAdminDashboard();
+        showToast(`Estoque de "${item.name}" atualizado.`);
+      }
+    }
+
+    function openStockModal(itemId = null) {
+      document.getElementById('stock-modal').classList.remove('hidden');
+      if (itemId) {
+        const item = stock.find(i => i.id === itemId);
+        document.getElementById('stock-modal-title').innerText = 'Editar Insumo';
+        document.getElementById('stock-item-id').value = item.id;
+        document.getElementById('stock-item-name').value = item.name;
+        document.getElementById('stock-item-category').value = item.category;
+        document.getElementById('stock-item-qty').value = item.quantity;
+      } else {
+        document.getElementById('stock-modal-title').innerText = 'Novo Insumo';
+        document.getElementById('stock-item-id').value = '';
+        document.getElementById('stock-item-name').value = '';
+        document.getElementById('stock-item-qty').value = '';
+      }
+    }
+
+    function closeStockModal() {
+      document.getElementById('stock-modal').classList.add('hidden');
+    }
+
+    function saveStockItem(e) {
+      e.preventDefault();
+      const id = document.getElementById('stock-item-id').value;
+      const name = document.getElementById('stock-item-name').value;
+      const category = document.getElementById('stock-item-category').value;
+      const qty = parseInt(document.getElementById('stock-item-qty').value, 10);
+
+      if (id) {
+        const item = stock.find(i => i.id === id);
+        item.name = name;
+        item.category = category;
+        item.quantity = qty;
+      } else {
+        stock.push({
+          id: 's' + Date.now(),
+          name: name,
+          category: category,
+          quantity: qty
+        });
+      }
+
+      saveState();
+      closeStockModal();
+      renderAdminDashboard();
+      showToast('Item de estoque salvo com sucesso!');
+    }
+
+    function deleteStockItem(id) {
+      if (confirm('Deseja realmente remover este item do estoque?')) {
+        stock = stock.filter(i => i.id !== id);
+        saveState();
+        renderAdminDashboard();
+        showToast('Item removido do estoque.');
+      }
+    }
+
+    // ================= EDIÇÃO DE CATÁLOGO / PROCEDIMENTOS =================
+    function renderAdminCatalogTable() {
+      const tbody = document.getElementById('admin-catalog-table-body');
+      
+      tbody.innerHTML = procedures.map(p => `
+        <tr class="hover:bg-brandNavyDark/50 transition">
+          <td class="py-3 px-4 font-semibold text-white flex items-center gap-3">
+            <img src="${p.image}" class="w-9 h-9 rounded-lg object-cover border border-brandGold/30" onerror="this.src='https://placehold.co/100x100'">
+            <div>
+              <p class="text-sm font-bold">${p.title}</p>
+              <p class="text-[10px] text-gray-400 truncate max-w-[200px]">${p.desc}</p>
+            </div>
+          </td>
+          <td class="py-3 px-4 text-xs text-gray-400 capitalize">${p.category}</td>
+          <td class="py-3 px-4 text-xs text-gray-300">${p.duration}</td>
+          <td class="py-3 px-4 font-bold text-brandGold">R$ ${p.price.toFixed(2).replace('.', ',')}</td>
+          <td class="py-3 px-4 text-right space-x-2">
+            <button onclick="openProcedureModal('${p.id}')" class="p-1.5 bg-brandGold/20 text-brandGold rounded-lg hover:bg-brandGold/30 text-xs">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button onclick="deleteProcedure('${p.id}')" class="p-1.5 bg-red-500/20 text-red-400 rounded-lg hover:bg-red-500/30 text-xs">
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function openProcedureModal(procId = null) {
+      document.getElementById('procedure-modal').classList.remove('hidden');
+      if (procId) {
+        const p = procedures.find(item => item.id === procId);
+        document.getElementById('proc-modal-title').innerText = 'Editar Procedimento';
+        document.getElementById('proc-item-id').value = p.id;
+        document.getElementById('proc-item-title').value = p.title;
+        document.getElementById('proc-item-category').value = p.category;
+        document.getElementById('proc-item-price').value = p.price;
+        document.getElementById('proc-item-duration').value = p.duration;
+        document.getElementById('proc-item-image').value = p.image;
+        document.getElementById('proc-item-desc').value = p.desc;
+      } else {
+        document.getElementById('proc-modal-title').innerText = 'Novo Procedimento';
+        document.getElementById('proc-item-id').value = '';
+        document.getElementById('proc-item-title').value = '';
+        document.getElementById('proc-item-price').value = '';
+        document.getElementById('proc-item-duration').value = '60 min';
+        document.getElementById('proc-item-image').value = '';
+        document.getElementById('proc-item-desc').value = '';
+      }
+    }
+
+    function closeProcedureModal() {
+      document.getElementById('procedure-modal').classList.add('hidden');
+    }
+
+    function saveProcedure(e) {
+      e.preventDefault();
+      const id = document.getElementById('proc-item-id').value;
+      const title = document.getElementById('proc-item-title').value;
+      const category = document.getElementById('proc-item-category').value;
+      const price = parseFloat(document.getElementById('proc-item-price').value);
+      const duration = document.getElementById('proc-item-duration').value;
+      const image = document.getElementById('proc-item-image').value;
+      const desc = document.getElementById('proc-item-desc').value;
+
+      if (id) {
+        const p = procedures.find(item => item.id === id);
+        p.title = title;
+        p.category = category;
+        p.price = price;
+        p.duration = duration;
+        p.image = image;
+        p.desc = desc;
+      } else {
+        procedures.push({
+          id: 'p' + Date.now(),
+          title, category, price, duration, image, desc
+        });
+      }
+
+      saveState();
+      closeProcedureModal();
+      renderCatalog();
+      renderAdminCatalogTable();
+      showToast('Procedimento atualizado com sucesso!');
+    }
+
+    function deleteProcedure(id) {
+      if (confirm('Tem certeza que deseja remover este procedimento do catálogo?')) {
+        procedures = procedures.filter(p => p.id !== id);
+        saveState();
+        renderCatalog();
+        renderAdminCatalogTable();
+        showToast('Procedimento removido.');
+      }
+    }
+
+    // ================= GRÁFICOS CHART.JS =================
+    function renderCharts() {
+      // 1. Gráfico Semanal
+      const ctxWeekly = document.getElementById('weeklyChart').getContext('2d');
+      if (weeklyChartInstance) weeklyChartInstance.destroy();
+
+      const days = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
+      const weeklyData = [350, 480, 620, 850, 920, 1100, 450]; // Mock de tendência visual
+
+      weeklyChartInstance = new Chart(ctxWeekly, {
+        type: 'bar',
+        data: {
+          labels: days,
+          datasets: [{
+            label: 'Receita (R$)',
+            data: weeklyData,
+            backgroundColor: 'rgba(212, 175, 55, 0.7)',
+            borderColor: '#D4AF37',
+            borderWidth: 1.5,
+            borderRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            y: {
+              grid: { color: 'rgba(212, 175, 55, 0.1)' },
+              ticks: { color: '#94A3B8' }
+            },
+            x: {
+              grid: { display: false },
+              ticks: { color: '#94A3B8' }
+            }
+          }
+        }
+      });
+
+      // 2. Gráfico Mensal Por Categoria
+      const ctxMonthly = document.getElementById('monthlyChart').getContext('2d');
+      if (monthlyChartInstance) monthlyChartInstance.destroy();
+
+      monthlyChartInstance = new Chart(ctxMonthly, {
+        type: 'doughnut',
+        data: {
+          labels: ['Estética Facial', 'Estética Corporal', 'Avançada / Injetáveis'],
+          datasets: [{
+            data: [4200, 3100, 6800],
+            backgroundColor: [
+              '#D4AF37',
+              '#1C2541',
+              '#AA7C11'
+            ],
+            borderColor: '#050914',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { color: '#E2E8F0', font: { size: 11 } }
+            }
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+```
