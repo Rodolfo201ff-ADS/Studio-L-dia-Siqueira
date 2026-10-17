@@ -1,73 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Studio Lídia Siqueira</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
-:root{--bg-primary:#0a1020;--accent-gold:#d4af37;--accent-pink:#ff5a8a;--text-muted:#94a3b8;--border-color:rgba(255,255,255,0.1);}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg-primary);color:white;font-family:Inter,system-ui,sans-serif;display:flex;justify-content:center;padding:20px;}
-.container{max-width:480px;width:100%;background:rgba(255,255,255,0.03);border:1px solid var(--border-color);border-radius:20px;padding:25px;box-shadow:0 10px 40px rgba(0,0,0,0.4);}
-.topo-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
-.btn-admin-login{background:#1e293b;color:white;border:none;padding:8px 14px;border-radius:20px;cursor:pointer;font-size:12px;}
-.logo-container{display:flex;justify-content:center;margin:20px 0;}
-.logo{width:180px;height:180px;object-fit:contain;border-radius:50%;box-shadow:0 5px 15px rgba(212,175,55,0.3);border:3px solid #d4af37;background:white;}
-.btn-whatsapp{display:inline-block;background:linear-gradient(135deg,#25d366,#128c7e);color:white;text-decoration:none;padding:14px;border-radius:12px;box-shadow:0 5px 15px rgba(37,211,102,0.3);text-align:center;width:100%;margin-bottom:20px;font-weight:700;}
-.form-group{margin-bottom:15px;}label{display:block;font-size:13px;color:var(--text-muted);margin-bottom:5px;}
-input,select{width:100%;padding:14px;border-radius:12px;border:1px solid var(--border-color);background:rgba(255,255,255,0.05);color:white;font-size:15px;}
-.linha-data-hora{display:flex;gap:15px;}
-.btn-principal{background:linear-gradient(135deg,var(--accent-gold),#b38f27);color:var(--bg-primary);border:none;cursor:pointer;font-weight:700;font-size:16px;padding:16px;width:100%;border-radius:12px;margin-top:10px;box-shadow:0 5px 20px rgba(212,175,55,0.3);}
-ul{list-style:none;}li{background:rgba(255,255,255,0.03);margin:10px 0;padding:15px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;border-left:4px solid var(--accent-pink);}
-.btn-excluir{background:#ef4444;color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer;font-size:12px;}
-.admin-panel{display:none;}.dashboard-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:25px;}
-.card-metrica{background:rgba(212,175,55,0.05);border:1px solid var(--border-color);padding:15px;border-radius:12px;text-align:center;}
-.card-metrica h4{font-size:12px;color:var(--text-muted);margin-bottom:5px;} .card-metrica p{font-size:18px;font-weight:700;color:var(--accent-gold);}
-.admin-section{background:rgba(0,0,0,0.2);padding:20px;border-radius:15px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.05);}
-.estoque-baixo{border-left:4px solid #ef4444 !important;background:rgba(239,68,68,0.05) !important;}
-.badge-alerta{background:#ef4444;color:white;font-size:10px;padding:2px 8px;border-radius:6px;font-weight:600;}
-.btn-voltar{background:#334155;color:white;border:none;padding:10px 20px;border-radius:10px;cursor:pointer;margin-bottom:20px;}
-footer{text-align:center;margin-top:20px;color:var(--text-muted);font-size:13px;}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Poppins;background:#0a1931;color:#fff}
+.container{max-width:1150px;margin:0 auto;padding:20px}.topo{display:flex;justify-content:space-between;align-items:center}
+.topo button{border:1px solid #d4af37;color:#d4af37;background:none;padding:8px 18px;border-radius:20px;cursor:pointer}
+.logo-box{text-align:center;padding:20px 0}.logo-box img{width:340px;height:340px;border-radius:50%;display:block;margin:20px auto;object-fit:cover;box-shadow:0 0 0 5px #d4af37,0 15px 35px rgba(0,0,0,.6)}
+.btn-wpp{background:#25D366;color:#fff;padding:12px 26px;border-radius:30px;text-decoration:none;font-weight:700;display:inline-block;margin-top:10px}
+.titulo{font-family:Great Vibes;font-size:44px;color:#d4af37;text-align:center;margin:35px 0 8px}.sub{text-align:center;color:#94a3b8;margin-bottom:22px}
+.catalogo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card{background:rgba(255,255,255,.08);border:1px solid rgba(212,175,55,.25);border-radius:20px;overflow:hidden;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:#d4af37}.card img{width:100%;height:190px;object-fit:cover}
+.card-body{padding:16px}.card-body h3{color:#f1c94a;font-size:17px}.card-body p{font-size:13px;color:#cbd5e1;margin:6px 0 10px;line-height:1.4}
+.info{display:flex;justify-content:space-between;color:#d4af37;font-weight:700;font-size:13px}.card-body button{width:100%;margin-top:12px;background:linear-gradient(90deg,#d4af37,#f1c94a);color:#0a1931;border:none;padding:11px;border-radius:12px;font-weight:800;cursor:pointer}
+#viewAdmin{display:none;background:#fff;color:#0a1931;border-radius:18px;padding:20px;margin-top:20px}
+#viewAdmin input,#viewAdmin textarea{width:100%;padding:10px;margin:6px 0;border:1px solid #ccc;border-radius:8px}
+#viewAdmin button{padding:10px 14px;border:none;border-radius:8px;cursor:pointer;font-weight:700}
+.btn-add{background:#0a1931;color:#d4af37}.btn-save{background:#25D366;color:#fff}
+.lista-admin{display:grid;gap:8px;margin-top:15px}
+.item-admin{display:flex;justify-content:space-between;background:#f8fafc;padding:10px;border-radius:8px}
+footer{text-align:center;padding:30px;color:#94a3b8;font-size:12px;border-top:1px solid rgba(212,175,55,.2);margin-top:40px}
+@media(max-width:600px){.logo-box img{width:280px;height:280px}.catalogo{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="container">
-<div class="topo-header"><span style="font-size:12px;color:var(--accent-gold);">✨ Studio Exclusivo</span><button class="btn-admin-login" onclick="abrirAdmin()">🔒 Acesso Proprietária</button></div>
-
-<!-- AQUI ESTÁ A LOGO - JÁ CORRIGIDA -->
-<div class="logo-container">
-<img src="./logo.png?v=99" alt="Studio Lídia Siqueira" style="width: 320px !important; height: 320px !important; objectfit: cover; border-radius: 50%; display: block; marggin: 20px outo;">
+<div class="topo"><span style="font-size:11px;color:#94a3b8">Studio Lídia Siqueira • Belém-PA</span><button onclick="abrirAdmin()">🔒 Acesso Proprietária</button></div>
+<div class="logo-box">
+<img src="./logo.png?v=100" alt="Logo">
+<a class="btn-wpp" href="https://wa.me/5591981800016" target="_blank">WhatsApp (91) 98180-0016</a>
 </div>
 
-<div id="viewCliente"><div style="text-align:center;"><a href="https://wa.me/5591981800016" target="_blank" class="btn-whatsapp">📱 Fale no WhatsApp (91) 98180-0016</a></div><h2>Agende seu Horário</h2><form id="formAgendamento"><div class="form-group"><label>Seu Nome</label><input type="text" id="nome" placeholder="Ex: Maria Silva" required></div><div class="form-group"><label>Procedimento</label><select id="servicoSelect" required></select></div><div class="linha-data-hora"><div class="form-group" style="width:100%;"><label>Data</label><input type="date" id="data" required></div><div class="form-group" style="width:100%;"><label>Hora</label><input type="time" id="hora" required></div></div><button type="submit" class="btn-principal">✨ Confirmar Agendamento</button></form><div style="margin-top:30px;border-top:1px solid var(--border-color);padding-top:20px;"><h3>Seus Agendamentos</h3><ul id="listaAgendamentosCliente"></ul></div></div>
-
-<div id="viewAdmin" class="admin-panel"><button class="btn-voltar" onclick="fecharAdmin()">← Voltar</button><h2>Painel da Lídia Siqueira</h2><div class="dashboard-cards"><div class="card-metrica"><h4>Diário</h4><p id="fatDiario">R$ 0,00</p></div><div class="card-metrica"><h4>Semanal</h4><p id="fatSemanal">R$ 0,00</p></div><div class="card-metrica"><h4>Mensal</h4><p id="fatMensal">R$ 0,00</p></div></div><div class="admin-section"><h3>Agenda & Caixa</h3><ul id="listaAdminAgendamentos"></ul></div><div class="admin-section"><h3>Serviços</h3><div class="form-group"><input type="text" id="novoServicoNome" placeholder="Nome do Procedimento"></div><div class="form-group"><input type="number" id="novoServicoPreco" placeholder="Preço R$"></div><button class="btn-principal" onclick="adicionarServico()">Adicionar</button><ul id="listaAdminServicos"></ul></div><div class="admin-section"><h3>Estoque</h3><div class="form-group"><input type="text" id="novoProdutoNome" placeholder="Nome do Insumo"></div><div class="form-group"><input type="number" id="novoProdutoQtd" placeholder="Qtd"></div><div class="form-group"><input type="number" id="novoProdutoMinimo" placeholder="Mínimo"></div><button class="btn-principal" onclick="adicionarProdutoEstoque()">Cadastrar</button><ul id="listaAdminEstoque"></ul></div></div>
-<footer><p>Studio Lídia Siqueira - Beleza que transforma</p></footer>
+<div id="viewCliente">
+<h2 class="titulo">Catálogo de Beleza</h2>
+<p class="sub">12 serviços exclusivos • Toque para agendar no WhatsApp</p>
+<div id="catalogo" class="catalogo"></div>
 </div>
+
+<div id="viewAdmin">
+<h2>👑 Painel Proprietária - Lídia</h2>
+<p style="font-size:13px;color:#64748b">Adicione novos serviços que aparecerão automaticamente para as clientes.</p>
+<div style="margin-top:15px">
+<input id="nome" placeholder="Nome do serviço ex: Design com Henna">
+<textarea id="desc" placeholder="Descrição curta"></textarea>
+<input id="preco" placeholder="Preço ex: R$ 75">
+<input id="tempo" placeholder="Tempo ex: 45 min">
+<input id="foto" placeholder="Link da foto (ou deixe vazio usa padrão)">
+<div style="display:flex;gap:8px;margin-top:8px">
+<button class="btn-add" onclick="adicionarServico()">+ Adicionar Serviço</button>
+<button onclick="voltarCliente()" style="background:#e2e8f0">Voltar ao Site</button>
+<button onclick="resetar()" style="background:#fee2e2;color:#b91c1c">Resetar Catálogo</button>
+</div>
+</div>
+<div id="listaAdmin" class="lista-admin"></div>
+</div>
+
+<footer>Studio Lídia Siqueira - Beleza que transforma • Belém • (91) 98180-0016</footer>
+</div>
+
 <script>
-const servicosPadrao=[{nome:"Limpeza de Pele",preco:120},{nome:"Botox",preco:350},{nome:"Depilação a Laser",preco:200},{nome:"Massagem Relaxante",preco:90}];
-const estoquePadrao=[{nome:"Ampola de Botox",qtd:2,minimo:3},{nome:"Luvas",qtd:5,minimo:2},{nome:"Sérum",qtd:1,minimo:2}];
-if(!localStorage.getItem('servicos'))localStorage.setItem('servicos',JSON.stringify(servicosPadrao));
-if(!localStorage.getItem('estoque'))localStorage.setItem('estoque',JSON.stringify(estoquePadrao));
-if(!localStorage.getItem('agendamentos'))localStorage.setItem('agendamentos',JSON.stringify([]));
-document.addEventListener('DOMContentLoaded',()=>{atualizarSelectServicos();carregarAgendamentosCliente();});
-function atualizarSelectServicos(){const s=JSON.parse(localStorage.getItem('servicos'));const sel=document.getElementById('servicoSelect');sel.innerHTML='';s.forEach(x=>{sel.innerHTML+=`<option value="${x.nome} - R$ ${x.preco}">${x.nome} - R$ ${x.preco}</option>`});}
-document.getElementById('formAgendamento').addEventListener('submit',function(e){e.preventDefault();const nome=document.getElementById('nome').value;const serv=document.getElementById('servicoSelect').value;const data=document.getElementById('data').value;const hora=document.getElementById('hora').value;const m=serv.match(/R\$\s(\d+)/);const valor=m?parseFloat(m[1]):0;let ags=JSON.parse(localStorage.getItem('agendamentos'));if(ags.find(a=>a.data===data&&a.hora===hora&&a.status!=='Cancelado')){alert('Horário ocupado');return;}ags.push({id:Date.now(),nome,servico:serv,valor,data,hora,status:'Pendente'});localStorage.setItem('agendamentos',JSON.stringify(ags));window.open(`https://wa.me/5591981800016?text=Olá Studio! Quero agendar ${serv} em ${data} às ${hora} - ${nome}`,'_blank');carregarAgendamentosCliente();this.reset();});
-function carregarAgendamentosCliente(){const lista=document.getElementById('listaAgendamentosCliente');lista.innerHTML='';let ags=JSON.parse(localStorage.getItem('agendamentos')).filter(a=>a.status==='Pendente');if(!ags.length){lista.innerHTML='<li>Nenhum pendente</li>';return;}ags.forEach(ag=>{const li=document.createElement('li');li.innerHTML=`<span><b>${ag.nome}</b><br>${ag.servico}<br>${ag.data} ${ag.hora}</span><button class=btn-excluir onclick=cancelarCliente(${ag.id})>Cancelar</button>`;lista.appendChild(li);});}
-function cancelarCliente(id){if(confirm('Cancelar?')){let a=JSON.parse(localStorage.getItem('agendamentos'));a=a.map(x=>x.id===id?{...x,status:'Cancelado'}:x);localStorage.setItem('agendamentos',JSON.stringify(a));carregarAgendamentosCliente();}}
-function abrirAdmin(){if(prompt('Senha (1234):')==='1234'){document.getElementById('viewCliente').style.display='none';document.getElementById('viewAdmin').style.display='block';carregarPainelAdmin();}}
-function fecharAdmin(){document.getElementById('viewAdmin').style.display='none';document.getElementById('viewCliente').style.display='block';}
-function carregarPainelAdmin(){carregarMetricas();carregarAdminAgendamentos();carregarAdminServicos();carregarAdminEstoque();}
-function carregarMetricas(){let ags=JSON.parse(localStorage.getItem('agendamentos'));const hoje=new Date().toISOString().split('T')[0];let d=0,s=0,m=0;const hj=new Date();ags.forEach(ag=>{if(ag.status==='Concluído'){if(ag.data===hoje)d+=ag.valor;const da=new Date(ag.data+'T00:00:00');if(da.getMonth()===hj.getMonth())m+=ag.valor;if(Math.abs(hj-da)/(1000*60*60*24)<=7)s+=ag.valor;}});document.getElementById('fatDiario').innerText=`R$ ${d.toFixed(2)}`;document.getElementById('fatSemanal').innerText=`R$ ${s.toFixed(2)}`;document.getElementById('fatMensal').innerText=`R$ ${m.toFixed(2)}`;}
-function carregarAdminAgendamentos(){const lista=document.getElementById('listaAdminAgendamentos');lista.innerHTML='';let ags=JSON.parse(localStorage.getItem('agendamentos'));ags.forEach(ag=>{const li=document.createElement('li');li.innerHTML=`<span><b>${ag.nome}</b> (${ag.status})<br>${ag.servico}<br>${ag.data} ${ag.hora}</span><div><button onclick=mudarStatus(${ag.id},'Concluído') style=background:#22c55e;border:none;color:white;padding:5px;border-radius:6px>Ok</button> <button onclick=mudarStatus(${ag.id},'Cancelado') style=background:#ef4444;border:none;color:white;padding:5px;border-radius:6px>X</button></div>`;lista.appendChild(li);});}
-function mudarStatus(id,st){let a=JSON.parse(localStorage.getItem('agendamentos'));a=a.map(x=>x.id===id?{...x,status:st}:x);localStorage.setItem('agendamentos',JSON.stringify(a));carregarPainelAdmin();}
-function carregarAdminServicos(){const l=document.getElementById('listaAdminServicos');l.innerHTML='';JSON.parse(localStorage.getItem('servicos')).forEach((s,i)=>{const li=document.createElement('li');li.innerHTML=`<span>${s.nome} - R$ ${s.preco}</span><button class=btn-excluir onclick=removerServico(${i})>X</button>`;l.appendChild(li);});}
-function adicionarServico(){const n=document.getElementById('novoServicoNome').value;const p=parseFloat(document.getElementById('novoServicoPreco').value);if(!n||isNaN(p))return;let s=JSON.parse(localStorage.getItem('servicos'));s.push({nome:n,preco:p});localStorage.setItem('servicos',JSON.stringify(s));carregarAdminServicos();atualizarSelectServicos();}
-function removerServico(i){let s=JSON.parse(localStorage.getItem('servicos'));s.splice(i,1);localStorage.setItem('servicos',JSON.stringify(s));carregarAdminServicos();atualizarSelectServicos();}
-function carregarAdminEstoque(){const l=document.getElementById('listaAdminEstoque');l.innerHTML='';JSON.parse(localStorage.getItem('estoque')).forEach((pr,i)=>{const li=document.createElement('li');if(pr.qtd<=pr.minimo)li.classList.add('estoque-baixo');li.innerHTML=`<span><b>${pr.nome}</b> Qtd:${pr.qtd}</span><div><button onclick=alterarQtdEstoque(${i},1) style=background:#334155;color:white;border:none;padding:5px;border-radius:5px>+</button> <button onclick=alterarQtdEstoque(${i},-1) style=background:#334155;color:white;border:none;padding:5px;border-radius:5px>-</button> <button class=btn-excluir onclick=removerEstoque(${i})>X</button></div>`;l.appendChild(li);});}
-function adicionarProdutoEstoque(){const n=document.getElementById('novoProdutoNome').value;const q=parseInt(document.getElementById('novoProdutoQtd').value);const mi=parseInt(document.getElementById('novoProdutoMinimo').value);if(!n||isNaN(q)||isNaN(mi))return;let e=JSON.parse(localStorage.getItem('estoque'));e.push({nome:n,qtd:q,minimo:mi});localStorage.setItem('estoque',JSON.stringify(e));carregarAdminEstoque();}
-function alterarQtdEstoque(i,d){let e=JSON.parse(localStorage.getItem('estoque'));e[i].qtd+=d;if(e[i].qtd<0)e[i].qtd=0;localStorage.setItem('estoque',JSON.stringify(e));carregarAdminEstoque();}
-function removerEstoque(i){let e=JSON.parse(localStorage.getItem('estoque'));e.splice(i,1);localStorage.setItem('estoque',JSON.stringify(e));carregarAdminEstoque();}
+const servicosPadrao = [
+{n:"Limpeza de Pele Profunda",d:"Extração de cravos, alta frequência e máscara calmante. Pele renovada na hora.",p:"R$ 129",t:"90 min",img:"https://images.unsplash.com/photo-1570172619644-dfd03ed1350b?w=600"},
+{n:"Design de Sobrancelhas",d:"Visagismo, henna e acabamento perfeito para realçar seu olhar.",p:"R$ 55",t:"45 min",img:"https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600"},
+{n:"Extensão de Cílios Fio a Fio",d:"Volume leve, natural e duradouro. Acorde pronta todos os dias.",p:"R$ 165",t:"120 min",img:"https://images.unsplash.com/photo-1515688594390-b649af70d282?w=600"},
+{n:"Depilação a Laser",d:"Tecnologia indolor, resultado definitivo por área: axila, buço ou virilha.",p:"R$ 89/área",t:"30 min",img:"https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600"},
+{n:"Massagem Modeladora",d:"Reduz medidas, ativa circulação e combate celulite com cremes termogênicos.",p:"R$ 110",t:"60 min",img:"https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600"},
+{n:"Drenagem Linfática",d:"Elimina inchaço e retenção. Ideal para pós-operatório e rotina.",p:"R$ 99",t:"60 min",img:"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600"},
+{n:"Microagulhamento",d:"Estimula colágeno, fecha poros e clareia manchas de acne.",p:"R$ 230",t:"90 min",img:"https://images.unsplash.com/photo-1552693673-1bf958298935?w=600"},
+{n:"Peeling Químico",d:"Renovação celular para melasma, manchas solares e textura.",p:"R$ 185",t:"60 min",img:"https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600"},
+{n:"Hidratação Facial + LED",d:"Hidratação intensiva com máscara + luz de LED para glow instantâneo.",p:"R$ 95",t:"50 min",img:"https://images.unsplash.com/photo-1570554886111-e1fc34d6d5a8?w=600"},
+{n:"Lash Lifting",d:"Curvatura natural dos seus próprios cílios por até 6 semanas.",p:"R$ 115",t:"60 min",img:"https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=600"},
+{n:"Brow Lamination",d:"Sobrancelhas alinhadas, volumosas e penteadas. Tendência 2026.",p:"R$ 95",t:"50 min",img:"https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600"},
+{n:"Spa dos Pés + Reflexologia",d:"Esfoliação, hidratação e massagem relaxante para descanso total.",p:"R$ 69",t:"60 min",img:"https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=600"}
+];
+
+function carregar(){return JSON.parse(localStorage.getItem('studio_servicos')) || JSON.stringify(servicosPadrao))}
+function salvar(d){localStorage.setItem('studio_servicos',JSON.stringify(d))}
+function render(){
+let dados=JSON.parse(carregar());let cat=document.getElementById('catalogo');cat.innerHTML='';
+dados.forEach(s=>{cat.innerHTML+=`<div class="card"><img src="${s.img}" alt="${s.n}" loading="lazy"><div class="card-body"><h3>${s.n}</h3><p>${s.d}</p><div class="info"><span>⏱ ${s.t}</span><span>${s.p}</span></div><button onclick="agendar('${s.n} - ${s.p}')">Agendar no WhatsApp</button></div></div>`});
+let lista=document.getElementById('listaAdmin');lista.innerHTML='';dados.forEach((s,i)=>{lista.innerHTML+=`<div class="item-admin"><span>${i+1}. ${s.n} - ${s.p}</span><span><button onclick="remover(${i})" style="color:red;background:none">Excluir</button></span></div>`});
+}
+function agendar(s){window.open(`https://wa.me/5591981800016?text=${encodeURIComponent('Olá Lídia! Quero agendar: '+s+' 💖')}`,'_blank')}
+function abrirAdmin(){let sen=prompt('Senha proprietária:');if(sen==='lidia2026'){document.getElementById('viewCliente').style.display='none';document.getElementById('viewAdmin').style.display='block';render()}else if(sen)alert('Senha incorreta')}
+function voltarCliente(){document.getElementById('viewAdmin').style.display='none';document.getElementById('viewCliente').style.display='block';render()}
+function adicionarServico(){
+let n=document.getElementById('nome').value,p=document.getElementById('preco').value,t=document.getElementById('tempo').value,d=document.getElementById('desc').value,f=document.getElementById('foto').value;
+if(!n||!p){alert('Preencha nome e preço');return}
+let dados=JSON.parse(carregar());dados.push({n:n,d:d||'Novo serviço exclusivo',p:p,t:t||'60 min',img:f||'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600'});salvar(dados);['nome','desc','preco','tempo','foto'].forEach(id=>document.getElementById(id).value='');render();alert('Serviço adicionado! Já aparece para as clientes.')}
+function remover(i){if(confirm('Excluir este serviço?')){let d=JSON.parse(carregar());d.splice(i,1);salvar(d);render()}}
+function resetar(){if(confirm('Voltar aos 12 serviços padrão?')){localStorage.removeItem('studio_servicos');render()}}
+render();
 </script>
 </body>
 </html>
